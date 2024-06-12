@@ -252,9 +252,9 @@ export default function BottomNavigation({ rol }) {
                         <img src="/icons/CALCULADORA DE PESO CARGABLE.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Calculadora de peso cargable  </span>
                     </Link>
-                    <Link href='/Calculadora' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                        <img src="/icons/CALCULADORA DE PESO CARGABLE.png" className=" w-[35px]" alt="" />
-                        <span className="text-[12px] font-medium text-center">Calculadora de conversiones  </span>
+                    <Link href='/Impuestos' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                        <img src="/icons/CALCULADORA DE IMPUESTOS.png" className=" w-[35px]" alt="" />
+                        <span className="text-[12px] font-medium text-center">Calculadora de impuestos </span>
                     </Link>
                     <Link href='/Tracking' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/DIRECCION.png" className=" w-[35px]" alt="" />
