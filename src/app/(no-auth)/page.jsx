@@ -371,11 +371,6 @@ export default function Home() {
 
                   <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px] w-full  px-5 py-2.5 text-center  mt-7 lg:col-span-2">Continuar</button>
                 </form>}
-
-
-
-
-
               {element === 'FTL' && calcValue === 'NO DATA' &&
                 <form className="space-y-5 lg:space-y-0  py-5 lg:grid lg:grid-cols-2 lg:gap-5" onSubmit={calculator}>
                   <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect} style={{ textTransform: 'uppercase' }}></InputEspecial>
@@ -383,7 +378,6 @@ export default function Home() {
                   <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple>
                   <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen'] : 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
                   <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue['Equipo'] ? selectValue['Equipo'] : 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
-
                   {/* <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
                   <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen'} />
                   <InputFlotante type="number" id="floating_6" onChange={handlerOnChange} defaultValue={data['Equipo']} required label={'Equipo'} /> */}
@@ -401,8 +395,6 @@ export default function Home() {
                   </div>
                 </div>
               }
-
-
             </div>
 
 

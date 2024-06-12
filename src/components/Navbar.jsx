@@ -192,11 +192,11 @@ export default function BottomNavigation({ rol }) {
             <div className='pt-5'>
                 <h3 className="text-white text-[12px] font-medium pt-2 pl-5 m-0">NOSOTROS</h3>
                 <div className='grid grid-cols-2 gap-[20px] p-[20px] pt-[10px]'>
-                    <Link href='/' onClick={() => setNav(false)} className='bg-[#F1BA06]    flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                    <Link href='/#Nosotros' onClick={() => setNav(false)} className='bg-[#F1BA06]    flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Nosotros</span>
                     </Link>
-                    <Link href='/' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                    <Link href='/#PorQueElegirnos' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/TRABAJO CONCLUIDO.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Por que elegirnos?</span>
                     </Link>
