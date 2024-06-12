@@ -10,7 +10,7 @@ import { glosario } from '@/db'
 
 
 export default function BottomNavigation({ rol }) {
-    const { user, userDB, modal, setModal, setUserProfile, setUserData, setUserProduct, setRecetaDB, setUserCart, setUserDistributorPDB, filter, setFilter, nav, setNav, navItem, setNavItem, setSeeMore} = useUser()
+    const { user, userDB, modal, setModal, setUserProfile, setUserData, setUserProduct, setRecetaDB, setUserCart, setUserDistributorPDB, filter, setFilter, nav, setNav, navItem, setNavItem, setSeeMore } = useUser()
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [scrollY, setScrollY] = useState(0)
@@ -64,16 +64,18 @@ export default function BottomNavigation({ rol }) {
                 <Link href="/" className="flex items-center">
                     <img src="/logo.svg" className="relative top-[3px] h-[50px]  mr-3" alt="Flowbite Logo" />
                 </Link>
-                {pathname === '/Glosario' && <div className="relative w-[60vw] h-[40px] ">
-                    <input type="search" id="location-search" onChange={handlerFilter} className="block p-3 w-full h-full z-20  placeholder-white text-[12px]   bg-[#7397e69d] rounded-[5px] focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Glosario" required />
-                    <button type="submit" className="absolute top-0 end-0 h-full p-2.5 text-[12px] font-medium text-[#000000] bg-[#ffffffc7] rounded-r-[5px] border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                        <span className="sr-only">Search</span>
-                    </button>
+                {
+                    pathname === '/Glosario' && <div className="relative w-[60vw] h-[40px] ">
+                        <input type="search" id="location-search" onChange={handlerFilter} className="block p-3 w-full h-full z-20  placeholder-white text-[12px]   bg-[#7397e69d] rounded-[5px] focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Glosario" required />
+                        <button type="submit" className="absolute top-0 end-0 h-full p-2.5 text-[12px] font-medium text-[#000000] bg-[#ffffffc7] rounded-r-[5px] border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                            <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span className="sr-only">Search</span>
+                        </button>
 
-                </div>}
+                    </div>
+                }
 
 
                 {/* 
@@ -181,7 +183,7 @@ export default function BottomNavigation({ rol }) {
             <div className="py-4 overflow-y-auto absolute top-[10px] right-[20px]">
                 <div className="w-[100%] text-[12px] flex justify-between items-center">
                     <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" onClick={() => setNav(false)}>
-                        <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#991b1b" aria-hidden="true">
+                        <svg className="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#991b1b" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -196,7 +198,7 @@ export default function BottomNavigation({ rol }) {
                         <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Nosotros</span>
                     </Link>
-                    <Link href='/#PorQueElegirnos' onClick={() => {setNav(false); setSeeMore('PORQUE')}} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                    <Link href='/#PorQueElegirnos' onClick={() => { setNav(false); setSeeMore('PORQUE') }} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/TRABAJO CONCLUIDO.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Por que elegirnos?</span>
                     </Link>
