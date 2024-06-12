@@ -10,7 +10,7 @@ import { glosario } from '@/db'
 
 
 export default function BottomNavigation({ rol }) {
-    const { user, userDB, modal, setModal, setUserProfile, setUserData, setUserProduct, setRecetaDB, setUserCart, setUserDistributorPDB, filter, setFilter, nav, setNav, navItem, setNavItem } = useUser()
+    const { user, userDB, modal, setModal, setUserProfile, setUserData, setUserProduct, setRecetaDB, setUserCart, setUserDistributorPDB, filter, setFilter, nav, setNav, navItem, setNavItem, setSeeMore} = useUser()
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [scrollY, setScrollY] = useState(0)
@@ -76,7 +76,7 @@ export default function BottomNavigation({ rol }) {
                 </div>}
 
 
-{/* 
+                {/* 
                 {filter.length > 1 && <div className='bg-[#fffffff8] w-screen fixed top-[60px] left-0 p-5 max-h-[50vh]'>
                     {Object.entries(glosario).map((i, index) => {
                         return i[0].toUpperCase().includes(filter.toUpperCase()) && <div className='pb-[10px]'><span className='block font-medium'>{i[0]}</span>{i[1]}<span></span> </div>
@@ -102,7 +102,7 @@ export default function BottomNavigation({ rol }) {
                     </div>
 
                 }
-                
+
                 <div className="hidden w-screen md:block md:w-auto " id="navbar-default">
                     <ul className="list-none font-medium flex flex-col p-4 md:p-0 mt-0 rounded-lg md:flex-row md:space-x-8  ">
                         <li onClick={() => handlerNavItem('Herramientas')}>
@@ -196,7 +196,7 @@ export default function BottomNavigation({ rol }) {
                         <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Nosotros</span>
                     </Link>
-                    <Link href='/#PorQueElegirnos' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                    <Link href='/#PorQueElegirnos' onClick={() => {setNav(false); setSeeMore('PORQUE')}} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/TRABAJO CONCLUIDO.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Por que elegirnos?</span>
                     </Link>
@@ -268,7 +268,7 @@ export default function BottomNavigation({ rol }) {
                 <div className='relative grid grid-cols-2 gap-[20px] p-[20px] pt-[10px] '>
 
                 </div>
-            </div>   
+            </div>
         </div>
     </>
 }

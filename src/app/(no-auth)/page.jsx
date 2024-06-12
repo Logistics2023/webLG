@@ -140,12 +140,11 @@ function Section({ subtitle, description, video, gradiente, id, children, tarjet
 
 
 export default function Home() {
-  const { user, introVideo, userDB, setUserProfile, setUserSuccess, success, setUserData, postsIMG, setUserPostsIMG, nav, cliente, setCliente, focus, setFocus } = useUser()
+  const { user, introVideo, userDB, setUserProfile, setUserSuccess, success, setUserData, postsIMG, setUserPostsIMG, nav, cliente, setCliente, focus, setFocus, seeMore, setSeeMore} = useUser()
 
   const [element, setElement] = useState('TRACKING')
   const [calcValue, setCalcValue] = useState('NO DATA')
   const [selectValue, setSelectValue] = useState({})
-  const [seeMore, setSeeMore] = useState('')
 
   const router = useRouter()
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -537,9 +536,9 @@ export default function Home() {
               Nuestra visión es consolidarnos como el referente indiscutible en el sector logístico, ganándonos la confianza plena de nuestros clientes a través de la excelencia, innovación y un servicio impecable. Aspiramos a ser reconocidos por nuestra capacidad de superar expectativas, adaptarnos a los cambios del mercado con agilidad y liderar el camino hacia un futuro donde la eficiencia logística y la sostenibilidad van de la mano. En Logistics Gear, nos comprometemos a ser sinónimo de confiabilidad y calidad, estableciendo nuevos estándares en la industria y expandiendo nuestra presencia global para conectar aún más el mundo con nuestros servicios.
             </div>
           </div>
-          <div className={`col-span-2 text-center transition-all w-[50%] ${seeMore === 'PORQUE' ? 'h-auto py-5' : 'h-0'} text-[14px] overflow-hidden text-white`}>
+          <div className={`col-span-2 text-center transition-all w-[50%] ${seeMore === 'PORQUE' ? 'h-auto py-5' : 'h-0'} text-[14px] overflow-hidden text-white`} id='PorQueElegirnos'>
 
-            <h4 className='text-[26px] text-center font-bold text-[#F7BE38]  py-5'>¿POR QUE ELEGIRNOS?</h4>
+            <h4 className='text-[26px] text-center font-bold text-[#F7BE38]  py-5' >¿POR QUE ELEGIRNOS?</h4>
             <p className='text-left '>
               •	Nuestro servicio está orientado a estándares de calidad, estamos comprometidos a darle una atención personalizada y crear soluciones logísticas inteligentes de acuerdo a cada negocio.
             </p>
