@@ -172,21 +172,23 @@ export default function Home() {
   }, [])
   // console.log(priceFTL)
 
-  // async function HandlerCheckOut(e) {
+  async function HandlerCheckOut(e) {
 
-  //   const db = Object.values(cart).reduce((acc, i, index) => {
-  //     const data = `Nombre: ${i['nombre 1']},\nCategoria: ${i.categoria},\nCantidad: ${i.cantidad},\n`
-  //     return data + '\r\n' + acc
-
-  //   }, ``)
+    //  const data =  Object.entries(calcValue).map((i, index) => `${i[0]}: ${i[1]}`)
 
 
-  //   var whatsappMessage = "Solicitud de cotización" + "\r\n\r\n" + db
-  //   whatsappMessage = window.encodeURIComponent(whatsappMessage)
-  //   console.log(whatsappMessage)
-  //   window.open(`https://api.whatsapp.com/send?phone=${perfil.whatsapp.replaceAll(' ', '')}&text=${whatsappMessage}`, '_blank')
+    const db = Object.entries(calcValue).reverse().reduce((acc, i, index) => {
+      const data = `${i[0]}: ${i[1]}\n`
+      return data + '\r\n' + acc
+    }, ``)
 
-  // }
+    var whatsappMessage = "Solicitud de cotización" + "\r\n\r\n" + db
+    whatsappMessage = window.encodeURIComponent(whatsappMessage)
+    console.log(whatsappMessage)
+    // window.open(`https://api.whatsapp.com/send?phone=${perfil.whatsapp.replaceAll(' ', '')}&text=${whatsappMessage}`, '_blank')
+    window.open(`https://api.whatsapp.com/send?phone=+59169941749&text=${whatsappMessage}`, '_blank')
+
+  }
 
 
   function handlerOnChange(e) {
@@ -217,7 +219,7 @@ export default function Home() {
   function handlerClickSelect(name, i, uuid) {
     setSelectValue(i)
     let db = { [name]: i }
-    setSelectValue({...selectValue, ...db})
+    setSelectValue({ ...selectValue, ...db })
   }
   // function write() {
 
@@ -247,7 +249,7 @@ export default function Home() {
   function handlerSeeMore(key) {
     seeMore === key ? setSeeMore('') : setSeeMore(key)
   }
-console.log(selectValue)
+  console.log(selectValue)
   return (
     <main className={`relative h-screen w-screen `} onClick={reset}>
 
@@ -276,7 +278,7 @@ console.log(selectValue)
               {/* <button onClick={write}>Click</button> */}
 
               <button type="button" onClick={() => router.push('/Calculadora')} className="w-full border-[2px]   text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-[12px] px-5 py-2.5 text-center inline-flex items-center ">
-                Calculadora
+                Contenedores
                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                 </svg>
@@ -352,7 +354,7 @@ console.log(selectValue)
               </form>}
 
 
-              {element === 'FCL' &&
+              {element === 'FCL' && calcValue === 'NO DATA' &&
 
 
                 <form className="space-y-5 lg:space-y-0 py-5 lg:grid lg:grid-cols-2 lg:gap-5" onSubmit={calculator}>
@@ -360,8 +362,8 @@ console.log(selectValue)
                   <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect} style={{ textTransform: 'uppercase' }}></InputEspecial>
                   <InputEspecial type='text' data={inputRef.current ? Object.values(userDB.priceFTL).filter((i) => i.ORIGEN === inputRef.current.value) : Object.values(userDB.priceFTL)} node={'Destino'} focusTxt='DESTINO-FTL' id='floating_2' inputRef={inputRef2} select={handlerSelect2} style={{ textTransform: 'uppercase' }}></InputEspecial>
                   <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple>
-                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen']: 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
-                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Mercancia' click={handlerClickSelect} defaultValue={selectValue['Mercancia']? selectValue['Mercancia']: 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
+                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen'] : 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
+                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Mercancia' click={handlerClickSelect} defaultValue={selectValue['Mercancia'] ? selectValue['Mercancia'] : 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
 
                   {/* <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
                   <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen'} />
@@ -379,8 +381,8 @@ console.log(selectValue)
                   <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect} style={{ textTransform: 'uppercase' }}></InputEspecial>
                   <InputEspecial type='text' data={inputRef.current ? Object.values(userDB.priceFTL).filter((i) => i.ORIGEN === inputRef.current.value) : Object.values(userDB.priceFTL)} node={'Destino'} focusTxt='DESTINO-FTL' id='floating_2' inputRef={inputRef2} select={handlerSelect2} style={{ textTransform: 'uppercase' }}></InputEspecial>
                   <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple>
-                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen']: 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
-                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue['Equipo']? selectValue['Equipo']: 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
+                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen'] : 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
+                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue['Equipo'] ? selectValue['Equipo'] : 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
 
                   {/* <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
                   <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen'} />
@@ -393,9 +395,9 @@ console.log(selectValue)
                 <div className=" pt-5 " >
                   {Object.entries(calcValue).map((i, index) => <div className='flex w-full'><span className='w-full  border px-3 py-1'>{i[0]}</span><span className='w-full border px-3 py-1'>{i[1]}</span></div>)}
 
-                  <div className='relative w-full lg:grid lg:grid-cols-2 lg:gap-x-5 mt-5'>
-                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2.5 text-center" onClick={() => setCalcValue('NO DATA')}>Volver a calcular</button>
-                    <button type="submit" className="text-white bg-green-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2.5 text-center">Solicitar Servicio</button>
+                  <div className='relative  w-full grid grid-cols-2 gap-x-5 mt-5'>
+                    <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2.5 text-center" onClick={() => setCalcValue('NO DATA')}>Volver a calcular</button>
+                    <button type="submit" className="w-full text-white bg-green-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2.5 text-center" onClick={HandlerCheckOut}>Solicitar Servicio</button>
                   </div>
                 </div>
               }
