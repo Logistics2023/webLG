@@ -197,8 +197,8 @@ export default function BottomNavigation({ rol }) {
                         <span className="text-[12px] font-medium text-center">Nosotros</span>
                     </Link>
                     <Link href='/' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                        <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
-                        <span className="text-[12px] font-medium text-center">Por que nosotros?</span>
+                        <img src="/icons/TRABAJO CONCLUIDO.png" className=" w-[35px]" alt="" />
+                        <span className="text-[12px] font-medium text-center">Por que elegirnos?</span>
                     </Link>
                 </div>
                 <h3 className="text-white text-[12px] font-medium pt-2 pl-5 m-0">NUESTROS SERVICIOS</h3>
