@@ -144,9 +144,7 @@ export default function Home() {
 
   const [element, setElement] = useState('TRACKING')
   const [calcValue, setCalcValue] = useState('NO DATA')
-  const [selectValue, setSelectValue] = useState('25000')
-  const [selectValue2, setSelectValue2] = useState('43')
-  const [selectValue3, setSelectValue3] = useState('Contenedor estandar')
+  const [selectValue, setSelectValue] = useState({})
   const [seeMore, setSeeMore] = useState('')
 
   const router = useRouter()
@@ -218,8 +216,8 @@ export default function Home() {
 
   function handlerClickSelect(name, i, uuid) {
     setSelectValue(i)
-    let db = { transporte: i }
-    setData(db)
+    let db = { [name]: i }
+    setSelectValue({...selectValue, ...db})
   }
   // function write() {
 
@@ -249,7 +247,7 @@ export default function Home() {
   function handlerSeeMore(key) {
     seeMore === key ? setSeeMore('') : setSeeMore(key)
   }
-
+console.log(selectValue)
   return (
     <main className={`relative h-screen w-screen `} onClick={reset}>
 
@@ -361,9 +359,9 @@ export default function Home() {
 
                   <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect} style={{ textTransform: 'uppercase' }}></InputEspecial>
                   <InputEspecial type='text' data={inputRef.current ? Object.values(userDB.priceFTL).filter((i) => i.ORIGEN === inputRef.current.value) : Object.values(userDB.priceFTL)} node={'Destino'} focusTxt='DESTINO-FTL' id='floating_2' inputRef={inputRef2} select={handlerSelect2} style={{ textTransform: 'uppercase' }}></InputEspecial>
-                  <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue} uuid='8768798' label='Peso'></SelectSimple>
-                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue2} uuid='8768798' label='Volumen'></SelectSimple>
-                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue3} uuid='8768798' label='Mercancia'></SelectSimple>
+                  <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple>
+                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen']: 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
+                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Mercancia' click={handlerClickSelect} defaultValue={selectValue['Mercancia']? selectValue['Mercancia']: 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
 
                   {/* <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
                   <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen'} />
@@ -380,9 +378,9 @@ export default function Home() {
                 <form className="space-y-5 lg:space-y-0  py-5 lg:grid lg:grid-cols-2 lg:gap-5" onSubmit={calculator}>
                   <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect} style={{ textTransform: 'uppercase' }}></InputEspecial>
                   <InputEspecial type='text' data={inputRef.current ? Object.values(userDB.priceFTL).filter((i) => i.ORIGEN === inputRef.current.value) : Object.values(userDB.priceFTL)} node={'Destino'} focusTxt='DESTINO-FTL' id='floating_2' inputRef={inputRef2} select={handlerSelect2} style={{ textTransform: 'uppercase' }}></InputEspecial>
-                  <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue} uuid='8768798' label='Peso'></SelectSimple>
-                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue2} uuid='8768798' label='Volumen'></SelectSimple>
-                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue3} uuid='8768798' label='Equipo'></SelectSimple>
+                  <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple>
+                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen']: 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
+                  <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue['Equipo']? selectValue['Equipo']: 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
 
                   {/* <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
                   <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen'} />

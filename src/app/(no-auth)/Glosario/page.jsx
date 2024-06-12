@@ -56,7 +56,7 @@ export default function BottomNavigation({ rol }) {
     }, [lastScrollY, show, filter]);
     return <div className='bg-[#fffffff8] w-screen p-5 mt-[80px] '>
 
-        <h3 className='text-[#F7BE38] text-[26px] font-bold mb-10'>GLOSARIO DE TERMINOS COMERCIO INTERNACIONAL</h3>
+        <h3 className='text-[#F7BE38] text-[26px] font-bold mb-10'>GLOSARIO DE TERMINOS DE COMERCIO INTERNACIONAL</h3>
         {
             Object.entries(glosario).map((i, index) => {
                 return i[0].toUpperCase().includes(filter.toUpperCase()) && i[0].toUpperCase().includes(filter.toUpperCase()) && <div className='flex pb-[10px]'>
