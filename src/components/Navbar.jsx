@@ -179,7 +179,7 @@ export default function BottomNavigation({ rol }) {
                                     <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                                     <span>Nosotros</span>
                                 </Link>
-                                <Link href='/#PorQueElegirnos' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                <Link href='/#PorQueElegirnos' onClick={() => { setNav(false); setSeeMore('PORQUE') }} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                                     <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                                     <span>Por que nosotros?</span>
                                 </Link>
