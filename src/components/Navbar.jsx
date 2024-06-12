@@ -90,7 +90,7 @@ export default function BottomNavigation({ rol }) {
                 {pathname !== '/Login' && pathname !== '/SignUp' && pathname !== '/Register' &&
                     <div className='relative  flex items-center'>
                         {
-                            pathname !== '/Glosario' && (user
+                            pathname === '/' && (user
                                 ? <button className=' relative h-[35px]   z-50 bg-[#F7BE38] mr-5 p-2 px-5 rounded-[5px] border lg:hidden' onClick={() => handleSignOut()}>Cerrar Sesión</button>
                                 : <button className=' relative h-[35px] z-50 bg-[#F7BE38]  mr-5 p-2 px-5 rounded-[5px] border lg:hidden' onClick={() => router.push('/Login')}>Iniciar Sesión</button>
                             )

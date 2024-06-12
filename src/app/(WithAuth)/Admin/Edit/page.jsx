@@ -81,6 +81,8 @@ export default function Home() {
           <Button url='exportaciones' src="/icons/TERRESTRE.png" >Exportaciones</Button>
           <Button url='farmaceutico' src="/icons/DESPACHO ADUANERO.png" >Farmaceuticos y sanitario </Button>
           <Button url='contactos' src="/icons/CARGA REFRIGERADA.png" > Contactos  </Button>
+          <Button url='maritimos' src="/icons/DESPACHO ADUANERO.png" >Contenedores Maritimos </Button>
+          <Button url='aereos' src="/icons/DESPACHO ADUANERO.png" >Contenedores Aereos </Button>
 
 
         </div>
