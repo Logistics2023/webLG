@@ -422,7 +422,7 @@ export default function Home() {
 
       <section className='relative w-full z-1000 overflow-x-hidden' id="Servicios">
 
-        <div className='relative px-5 py-12 w-full flex flex-col  lg:grid lg:grid-cols-2 justify-around items-center   bg-gradient-to-t from-[#00195cdc] via-[#00195cb6] to-[#00195cdc] '>
+        <div className='relative px-5 py-12 w-full flex flex-col  lg:grid lg:grid-cols-2 justify-around items-center   bg-gradient-to-t from-[#00195cdc] via-[#00195cb6] to-[#00195cdc] ' id='Nosotros'>
           <div>
             {/* <div  className='relative px-5 py-12 w-full flex flex-col  lg:flex-row justify-around items-center  bg-gradient-to-tr from-[#2A52BE] via-[#3259c5] to-[#2A52BE]'>
           <div> */}
@@ -506,7 +506,7 @@ export default function Home() {
 
             </ScrollAnimation>
 
-            <div className={`col-span-2 text-center transition-all w-[100%] ${seeMore === 'PORQUE' ? 'h-auto py-5' : 'h-0'} text-[14px] overflow-hidden text-white `} id='PorQueElegirnos'>
+            <div className={`col-span-2 text-center transition-all w-[100%] ${seeMore === 'PORQUE' ? 'h-auto py-5' : 'h-0'} text-[14px] overflow-hidden text-white lg:hidden`} id='PorQueElegirnos'>
 
               <h4 className='text-[26px] text-center font-bold text-[#F7BE38]  py-5' >¿POR QUE ELEGIRNOS?</h4>
               <p className='text-left '>
@@ -519,7 +519,7 @@ export default function Home() {
 
             <ScrollAnimation animateIn='bounceInRight'>
 
-              <button type="button" onClick={() => handlerSeeMore('MISION')} className="relative w-full border-[2px] md:min-w-[300px] md:max-w-[300px] text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-[12px] px-5 py-2.5 text-center inline-flex items-center mt-[20px] lg:mt-[0px] my-2">
+              <button type="button" onClick={() => handlerSeeMore('MISION')} className="relative w-full border-[2px] md:min-w-[300px] md:max-w-[300px] text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-[12px] px-5 py-2.5 text-center inline-flex items-center mt-[20px] lg:mt-2 my-2">
                 MISIÓN y VISIÓN saber {seeMore === 'MISION' ? 'menos' : 'mas'}...
                 <span className={seeMore === 'MISION' ? 'absolute right-5 rotate-[270deg]' : 'absolute right-5 rotate-90'}>{'>'}</span>
 
@@ -574,8 +574,8 @@ export default function Home() {
 
       {cliente['terrestre'] && <Section subtitle={cliente['terrestre'].titulo} description={cliente['terrestre'].content} video={cliente['terrestre'].url} degrade='#00000067' tarjetas={cliente['terrestre'].tarjetas} miniTarjetas={cliente['terrestre'].miniTarjetas} id={'terrestre'}></Section>}
       {cliente['maritimo'] && <Section subtitle={cliente['maritimo'].titulo} description={cliente['maritimo'].content} video={cliente['maritimo'].url} degrade='#00000067' tarjetas={cliente['maritimo'].tarjetas} miniTarjetas={cliente['maritimo'].miniTarjetas} id={'maritimo'}></Section>}
-      {cliente['aereo'] && <Section subtitle={cliente['aereo'].titulo} description={cliente['aereo'].content} video={cliente['aereo'].url} degrade='#00000067' tarjetas={cliente['aereo'].tarjetas} miniTarjetas={cliente['aereo'].miniTarjetas} id={cliente['aereo'][0]}></Section>}
-      {cliente['despachos'] && <Section subtitle={cliente['despachos'].titulo} description={cliente['despachos'].content} video={cliente['despachos'].url} degrade='#00000067' tarjetas={cliente['despachos'].tarjetas} miniTarjetas={cliente['despachos'].miniTarjetas} id={cliente['despachos'][0]}></Section>}
+      {cliente['aereo'] && <Section subtitle={cliente['aereo'].titulo} description={cliente['aereo'].content} video={cliente['aereo'].url} degrade='#00000067' tarjetas={cliente['aereo'].tarjetas} miniTarjetas={cliente['aereo'].miniTarjetas} id={'aereo'}></Section>}
+      {cliente['despachos'] && <Section subtitle={cliente['despachos'].titulo} description={cliente['despachos'].content} video={cliente['despachos'].url} degrade='#00000067' tarjetas={cliente['despachos'].tarjetas} miniTarjetas={cliente['despachos'].miniTarjetas} id={'despachos'}></Section>}
       {cliente['proyecto'] && <Section subtitle={cliente['proyecto'].titulo} description={cliente['proyecto'].content} video={cliente['proyecto'].url} degrade='#00000067' tarjetas={cliente['proyecto'].tarjetas} miniTarjetas={cliente['proyecto'].miniTarjetas} id={'proyecto'}></Section>}
       {cliente['exportaciones'] && <Section subtitle={cliente['exportaciones'].titulo} description={cliente['exportaciones'].content} video={cliente['exportaciones'].url} degrade='#00000067' tarjetas={cliente['exportaciones'].tarjetas} miniTarjetas={cliente['exportaciones'].miniTarjetas} id={'exportaciones'}></Section>}
       {cliente['farmaceutico'] && <Section subtitle={cliente['farmaceutico'].titulo} description={cliente['farmaceutico'].content} video={cliente['farmaceutico'].url} degrade='#00000067' tarjetas={cliente['farmaceutico'].tarjetas} miniTarjetas={cliente['farmaceutico'].miniTarjetas} id={'farmaceutico'}></Section>}
