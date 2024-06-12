@@ -107,31 +107,7 @@ export default function BottomNavigation({ rol }) {
 
                 <div className="hidden w-screen md:block md:w-auto " id="navbar-default">
                     <ul className="list-none font-medium flex flex-col p-4 md:p-0 mt-0 rounded-lg md:flex-row md:space-x-8  ">
-                        <li onClick={() => handlerNavItem('Herramientas')}>
-                            <a href="#" className={`block py-2 pl-3 pr-4 text-[14px] rounded   md:border-0  md:p-0   transition-all hover:text-[#F1BA06] cursor-pointer z-30 ${navItem === 'Herramientas' ? 'text-[#F1BA06]' : 'text-white'}`} >Herramientas</a>
-                            <div className={`absolute top-[90px] right-[20px] w-[350px]  bg-blue-950  grid grid-cols-2 gap-[20px]  rounded-2xl z-20  overflow-hidden ${navItem === 'Herramientas' ? 'h-auto p-[20px]' : 'h-0 overflow-hidden'}`}>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                                    <img src="/icons/TIPOS DE CONTENEDORES.png" className=" w-[35px]" alt="" />
-                                    <span className="text-[12px] font-medium text-center">Contenedores maritimos</span>
-                                </Link>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                                    <img src="/icons/TIPOS DE CONTENEDORES.png" className=" w-[35px]" alt="" />
-                                    <span className="text-[12px] font-medium text-center">Contenedores aereos</span>
-                                </Link>
-                                <Link href='/Calculadora' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                                    <img src="/icons/CALCULADORA DE PESO CARGABLE.png" className=" w-[35px]" alt="" />
-                                    <span className="text-[12px] font-medium text-center">Calculadora de peso cargable  </span>
-                                </Link>
-                                <Link href='/Calculadora' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                                    <img src="/icons/CALCULADORA DE PESO CARGABLE.png" className=" w-[35px]" alt="" />
-                                    <span className="text-[12px] font-medium text-center">Calculadora de conversiones  </span>
-                                </Link>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                                    <img src="/icons/DIRECCION.png" className=" w-[35px]" alt="" />
-                                    <span className="text-[12px] font-medium text-center">Tracking</span>
-                                </Link>
-                            </div>
-                        </li>
+
                         <li onClick={() => handlerNavItem('Servicios')}>
                             <a href="#" className={`block py-2 pl-3 pr-4 text-[14px] rounded   md:border-0  md:p-0   transition-all hover:text-[#F1BA06] cursor-pointer z-30 ${navItem === 'Servicios' ? 'text-[#F1BA06]' : 'text-white'}`}>Servicios</a>
                             <div className={`absolute top-[90px] right-[20px] w-[350px]  bg-blue-950  grid grid-cols-2 gap-[20px]  rounded-2xl z-20  overflow-hidden ${navItem === 'Servicios' ? 'h-auto p-[20px]' : 'h-0 overflow-hidden'}`}>
@@ -147,24 +123,63 @@ export default function BottomNavigation({ rol }) {
                                     <img src="/icons/AEREO.png" className=" w-[35px]" alt="" />
                                     <span className="text-[12px] font-medium text-center">Transporte Aereo</span>
                                 </Link>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                <Link href='#despachos' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                                     <img src="/icons/DESPACHO ADUANERO.png" className=" w-[35px]" alt="" />
                                     <span className="text-[12px] font-medium text-center">Despachos Aduaneros</span>
                                 </Link>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                            </div>
+                        </li>
+                        <li onClick={() => handlerNavItem('ServiciosEspecializados')}>
+                            <a href="#" className={`block py-2 pl-3 pr-4 text-[14px] rounded   md:border-0  md:p-0   transition-all hover:text-[#F1BA06] cursor-pointer z-30 ${navItem === 'ServiciosEspecializados' ? 'text-[#F1BA06]' : 'text-white'}`}>Servicios Especializados</a>
+                            <div className={`absolute top-[90px] right-[20px] w-[350px]  bg-blue-950  grid grid-cols-2 gap-[20px]  rounded-2xl z-20  overflow-hidden ${navItem === 'ServiciosEspecializados' ? 'h-auto p-[20px]' : 'h-0 overflow-hidden'}`}>
+                                <Link href='/#proyecto' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                                     <img src="/icons/CARGA REFRIGERADA.png" className=" w-[35px]" alt="" />
                                     <span className="text-[12px] font-medium">Cargas Proyecto</span>
+                                </Link>
+                                <Link href='#exportaciones' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/TERRESTRE.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Exportaciones</span>
+                                </Link>
+                                <Link href='#farmaceutico' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/MARITIMO.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Farmacéutico y Sanitario</span>
+                                </Link>
+                            </div>
+                        </li>
+                        
+                        <li onClick={() => handlerNavItem('Herramientas')}>
+                            <a href="#" className={`block py-2 pl-3 pr-4 text-[14px] rounded   md:border-0  md:p-0   transition-all hover:text-[#F1BA06] cursor-pointer z-30 ${navItem === 'Herramientas' ? 'text-[#F1BA06]' : 'text-white'}`} >Herramientas</a>
+                            <div className={`absolute top-[90px] right-[20px] w-[350px]  bg-blue-950  grid grid-cols-2 gap-[20px]  rounded-2xl z-20  overflow-hidden ${navItem === 'Herramientas' ? 'h-auto p-[20px]' : 'h-0 overflow-hidden'}`}>
+                                <Link href='/ContenedoresMaritimos' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/TIPOS DE CONTENEDORES.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Contenedores maritimos</span>
+                                </Link>
+                                <Link href='/ContenedoresAereos' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/TIPOS DE CONTENEDORES.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Contenedores aereos</span>
+                                </Link>
+                                <Link href='/Calculadora' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/CALCULADORA DE PESO CARGABLE.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Calculadora de peso cargable  </span>
+                                </Link>
+                                <Link href='/Impuestos' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/CALCULADORA DE IMPUESTOS.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Calculadora de impuestos  </span>
+                                </Link>
+                                <Link href='/#home' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                    <img src="/icons/DIRECCION.png" className=" w-[35px]" alt="" />
+                                    <span className="text-[12px] font-medium text-center">Tracking</span>
                                 </Link>
                             </div>
                         </li>
                         <li onClick={() => handlerNavItem('Nosotros')}>
                             <a href="#" className={`block py-2 pl-3 pr-4 text-[14px] rounded   md:border-0  md:p-0   transition-all hover:text-[#F1BA06] cursor-pointer z-30 ${navItem === 'Nosotros' ? 'text-[#F1BA06]' : 'text-white'}`}>Acerca de</a>
                             <div className={`absolute top-[90px] right-[20px] w-[350px]  bg-blue-950  grid grid-cols-2 gap-[20px]  rounded-2xl z-20  overflow-hidden ${navItem === 'Nosotros' ? 'h-auto p-[20px]' : 'h-0 overflow-hidden'}`}>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                <Link href='/#Nosotros' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                                     <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                                     <span>Nosotros</span>
                                 </Link>
-                                <Link href='/' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                                <Link href='/#PorQueElegirnos' className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                                     <img src="/icons/NOSOTROS.png" className=" w-[35px]" alt="" />
                                     <span>Por que nosotros?</span>
                                 </Link>

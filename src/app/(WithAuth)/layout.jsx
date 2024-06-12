@@ -16,17 +16,17 @@ import { onAuth } from '@/firebase/utils'
 
 function Home({ children }) {
 
-    const { user, userDB, setUserProfile, setUserData, cliente, setCliente, setFocus } = useUser()
+    const { user, userDB, setUserProfile, setUserData, cliente, setNavItem, setCliente, setFocus } = useUser()
     const router = useRouter()
     console.log(user)
     useEffect(() => {
-        if (user === undefined){ onAuth(setUserProfile, setUserData)}
-          cliente === undefined &&  getSpecificData('/Cliente', setCliente)
+        if (user === undefined) { onAuth(setUserProfile, setUserData) }
+        cliente === undefined && getSpecificData('/Cliente', setCliente)
     }, [user, cliente])
     return (
-      
-           <div onClick={()=>setFocus(false)}>{children}</div>
-       
+
+        <div onClick={() => {setFocus(false); setNavItem(false)} }>{children}</div>
+
     )
 }
 
