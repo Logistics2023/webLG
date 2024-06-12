@@ -226,7 +226,7 @@ export default function Home() {
 
 
 
-      {cliente['maritimos'] && <Section subtitle={cliente['maritimos'].titulo} description={cliente['maritimos'].content} video={cliente['maritimos'].url} degrade='#00000067' tarjetas={cliente['maritimos'].tarjetas} miniTarjetas={cliente['maritimos'].miniTarjetas} id={'maritimos'}></Section>}
+      {cliente['aereos'] && <Section subtitle={cliente['aereos'].titulo} description={cliente['aereos'].content} video={cliente['aereos'].url} degrade='#00000067' tarjetas={cliente['aereos'].tarjetas} miniTarjetas={cliente['aereos'].miniTarjetas} id={'aereos'}></Section>}
  
 
 

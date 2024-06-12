@@ -17,6 +17,8 @@ import Input from '@/components/Input'
 import { useRouter } from 'next/navigation';
 import Modal from '@/components/Modal'
 import TextEditor from '@/components/TextEditor'
+import TextEditorSimple from '@/components/TextEditorSimple'
+
 // import { useSearchParams } from 'next/navigation'
 
 
@@ -40,6 +42,7 @@ export default function Home() {
 
     //    console.log(window.location.href.split('=')[1]) 
     const [textEditor, setTextEditor] = useState(undefined)
+    const [textEditor2, setTextEditor2] = useState(undefined)
 
     // const searchParams = useSearchParams()
     const [query, setQuery] = useState('')
@@ -87,9 +90,11 @@ export default function Home() {
         setData3({ ...data3, [`item${index}`]: { ...data3[`item${index}`], file: e.target.files[0] } })
     }
     function onChangeHandler3(e, index) {
-        setData3({ ...data3, [`item${index}`]: { ...data3[`item${index}`], [e.target.name]: e.target.value } })
+     setData3({ ...data3, [`item${index}`]: { ...data3[`item${index}`], [e.target.name]: e.target.value } })
     }
-
+    function onChangeHandler4(e, index) {
+        setData3({ ...data3, [`item${index}`]: { ...data3[`item${index}`], paragraph: e } })
+       }
     function handlerLess3() {
         let db = { ...data3 };
         delete db[`item${data3 !== undefined && Object.keys(data3).length - 1}`];
@@ -161,8 +166,7 @@ export default function Home() {
 
 
     useEffect(() => {
-        console.log(query)
-        console.log(textEditor == undefined && cliente && cliente[query] && cliente[query] && cliente[query].content)
+
         if (Object.keys(data2).length === 0 && cliente && cliente[query] && cliente[query] && cliente[query].miniTarjetas) {
             setData2({ ...cliente[query].miniTarjetas, ...data2, })
         }
@@ -224,10 +228,8 @@ export default function Home() {
 
                             <div className='flex justify-center p-5'>
                                 <Suspense >
-
                                     <video src={dataURL && dataURL.frontPage && dataURL.frontPage ? dataURL.frontPage : (cliente && cliente[query] && cliente[query].url)} className='h-[300px]' autoPlay loop muted ></video>
                                 </Suspense >
-
                             </div>
                         </div>
                         <div className="sm:col-span-3">
@@ -238,7 +240,6 @@ export default function Home() {
                             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
                                 <div className="sm:col-span-3">
                                     <label htmlFor="first-name" className="block text-[12px] font-medium leading-6 text-gray-900">Contenido de texto</label>
-
                                     <TextEditor value={textEditor} setValue={setTextEditor} edit={true} ></TextEditor>
                                 </div>
                             </div>
@@ -324,7 +325,8 @@ export default function Home() {
                                 <label htmlFor="first-name" className="block text-[12px] font-medium leading-6 text-gray-900">Titulo</label>
                                 <input type="text" name={`title`} onChange={(e) => onChangeHandler3(e, index)} className="block w-full rounded-md border-0 p-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-[12px] sm:leading-6" defaultValue={data3[`item${index}`][`title`]} />
                                 <label htmlFor="first-name" className="block text-[12px] font-medium leading-6 text-gray-900">Descripción</label>
-                                <input type="text" name={`paragraph`} onChange={(e) => onChangeHandler3(e, index)} className="block w-full rounded-md border-0 p-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-[12px] sm:leading-6" defaultValue={data3[`item${index}`][`paragraph`]} />
+                                <TextEditorSimple value={data3[`item${index}`][`paragraph`]} setValue={(e) => onChangeHandler4(e, index)} edit={true} ></TextEditorSimple>
+                                {/* <input type="text" name={`paragraph`} onChange={(e) => onChangeHandler3(e, index)} className="block w-full rounded-md border-0 p-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-[12px] sm:leading-6" defaultValue={data3[`item${index}`][`paragraph`]} /> */}
                             </div>
                         })
                         }
