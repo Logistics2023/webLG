@@ -242,11 +242,11 @@ export default function BottomNavigation({ rol }) {
 
                 <h3 className="text-white text-[12px] font-medium pt-2 pl-5 m-0">HERRAMIENTAS</h3>
                 <div className='relative grid grid-cols-2 gap-[20px] p-[20px] pt-[10px] '>
-                    <Link href='/' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                    <Link href='/ContenedoresMaritimos' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/TIPOS DE CONTENEDORES.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Contenedores maritimos</span>
                     </Link>
-                    <Link href='/' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
+                    <Link href='/ContenedoresAereos' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
                         <img src="/icons/TIPOS DE CONTENEDORES.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Contenedores aereos</span>
                     </Link>
