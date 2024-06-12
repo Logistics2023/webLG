@@ -261,7 +261,7 @@ export default function BottomNavigation({ rol }) {
                         <span className="text-[12px] font-medium text-center">Tracking</span>
                     </Link>
                     <Link href='/Glosario' onClick={() => setNav(false)} className='bg-[#F1BA06]   flex flex-col items-center px-[5px] py-[5px] rounded-[7px]'>
-                        <img src="/icons/Glosario.png" className=" w-[35px]" alt="" />
+                        <img src="/icons/GLOSARIO.png" className=" w-[35px]" alt="" />
                         <span className="text-[12px] font-medium text-center">Glosario</span>
                     </Link>
                 </div>

@@ -182,7 +182,7 @@ export default function Home() {
       return data + '\r\n' + acc
     }, ``)
 
-    var whatsappMessage = "Solicitud de cotización" + "\r\n\r\n" + db
+    var whatsappMessage = "SOLICITUD DE SERVICIO" + "\r\n\r\n" + db
     whatsappMessage = window.encodeURIComponent(whatsappMessage)
     console.log(whatsappMessage)
     // window.open(`https://api.whatsapp.com/send?phone=${perfil.whatsapp.replaceAll(' ', '')}&text=${whatsappMessage}`, '_blank')
