@@ -46,7 +46,7 @@ const db = [
 
 function Componente({ title, image, paragraph }) {
   return <div className='relative bg-[#ffffffcb] my-5   lg:max-w-[500px] lg:min-w-[250px] lg:min-h-[250px] lg:text-[18px] lg:mx-5 flex flex-col justify-center items-center rounded-[15px] '>
-    <img src={image} className=" w-[150px] lg:max-w-[200px] object-contain p-5" alt="" />
+    <img src={image} className=" w-full max-w-[70vw] lg:max-w-[200px] object-contain p-5" alt="" />
     <div className="w-full bg-gradient-to-t from-[#00195cbe] via-[#00195cbe] to-[#00195c]  p-5 py-5 rounded-t-[0]  rounded-b-[15px]">
       <h4 className="w-full text-left font-medium border-b-[3px] text-white pb-5 pl-0 ml-0 border-[#ffffff] p-5">{title}</h4>
       <p className="text-white " >
