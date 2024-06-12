@@ -76,9 +76,9 @@ export default function Home() {
             {/* <Video /> */}
             <div className='w-screen h-screen  flex flex-col justify-center items-center'>
 
-                <img src="/truck.png" className='fixed  w-screen h-screen bg-[#01A7EB] object-cover lg:hidden' alt="" />
+                {/* <img src="/truck.png" className='fixed  w-screen h-screen bg-[#01A7EB] object-cover lg:hidden' alt="" /> */}
 
-                <img src="/airplane-bg.jpg" className='absolute  w-screen h-screen bg-[#01A7EB] object-cover hidden md:block' alt="" />
+                <img src="/airplane-bg.jpg" className='absolute  w-screen h-screen bg-[#01A7EB] object-cover ' alt="" />
 
                 <form className={`space-y-6 lg:space-y-3  rounded-[30px] w-[100%] max-w-[400px] p-5 h-auto px-5 py-10 lg:p-10 z-10 lg:scale-110`} onSubmit={registerHandler} >
 

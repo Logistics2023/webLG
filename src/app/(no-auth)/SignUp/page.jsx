@@ -54,9 +54,9 @@ export default function Home() {
         {/* <video  className='absolute top-0  w-full min-h-[100vh] object-cover z-10' autoPlay loop muted>
       <source src='underwater.mp4' type="video/mp4" />
     </video>  */}
-        <img src="/truck.png"  className='absolute  w-screen h-screen bg-[#01A7EB] object-cover lg:hidden' alt="" />
+        {/* <img src="/truck.png"  className='absolute  w-screen h-screen bg-[#01A7EB] object-cover lg:hidden' alt="" /> */}
 
-        <img src="/airplane-bg.jpg"  className='absolute  w-screen h-screen bg-[#01A7EB] object-cover hidden md:block' alt="" />
+        <img src="/airplane-bg.jpg"  className='absolute  w-screen h-screen bg-[#01A7EB] object-cover' alt="" />
 
 
         <form  className={`space-y-6 lg:space-y-3 w-[100%] rounded-[30px] max-w-[350px] z-10 lg:scale-110`} onSubmit={signUpHandler} >
