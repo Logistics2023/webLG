@@ -309,10 +309,7 @@ export default function Home() {
                 </ul>
                 : <div className='w-full text-center bg-blue-700 text-white p-2'>  COTIZACIÓN {element}  </div>
               }
-
-
               {element === 'TRACKING' && <form className="max-w-md w-full flex  mx-auto pt-5">
-
                 <div className="flex w-full ">
                   <label htmlFor="location-search" className="mb-2 text-[12px] font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
                   <div className="relative w-full">
@@ -324,9 +321,6 @@ export default function Home() {
                       <span className="sr-only">Search</span>
                     </button>
                   </div>
-
-
-
                 </div>
 
                 <label htmlFor="qr" className='bg-[#F7BE38] border-[2px] border-[#0000002d] p-2 rounded-[5px]'>
@@ -372,12 +366,21 @@ export default function Home() {
                 </form>}
               {element === 'FTL' && calcValue === 'NO DATA' &&
                 <form className="space-y-5 lg:space-y-0  py-5 lg:grid lg:grid-cols-2 lg:gap-5" onSubmit={calculator}>
-                  <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect} style={{ textTransform: 'uppercase' }}></InputEspecial>
+                  <InputEspecial type='text' data={Object.values(userDB.priceFTL)} node={'Origen'} focusTxt='ORIGEN-FTL' id='floating_1' inputRef={inputRef} select={handlerSelect}></InputEspecial>
                   <InputEspecial type='text' data={inputRef.current ? Object.values(userDB.priceFTL).filter((i) => i.ORIGEN === inputRef.current.value) : Object.values(userDB.priceFTL)} node={'Destino'} focusTxt='DESTINO-FTL' id='floating_2' inputRef={inputRef2} select={handlerSelect2} style={{ textTransform: 'uppercase' }}></InputEspecial>
-                  <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple>
-                  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen'] : 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
+                  <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
+                  <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen M3'} />
+                  <SelectSimple arr={['20000', '25000']} name='Tipo de unidad' click={handlerClickSelect} defaultValue={selectValue['Tipo de unidad'] ? selectValue['Tipo de unidad'] : 'Seleccionar'} uuid='8768798' label='Tipo de unidad'></SelectSimple>
+                  <InputFlotante type="number" id="floating_7" onChange={handlerOnChange} defaultValue={data['Tipo de unidad']} required label={'Tipo de unidad'} />
+                  <InputFlotante type="number" id="floating_7" onChange={handlerOnChange} defaultValue={data['Mercancia']} required label={'Mercancia'} />
+                  <InputFlotante type="number" id="floating_7" onChange={handlerOnChange} defaultValue={data['Servicio']} required label={'Servicio'} />
+
+                  {/* <InputFlotante type="number" id="floating_6" onChange={handlerOnChange} defaultValue={data['Equipo']} required label={'Equipo'} />  */}
+
+                  {/* <SelectSimple arr={['20000', '25000', '30000']} name='Peso (KG)' click={handlerClickSelect} defaultValue={selectValue['Peso (KG)'] ? selectValue['Peso (KG)'] : 'Seleccionar'} uuid='8768798' label='Peso'></SelectSimple> */}
+                  {/*  <SelectSimple arr={['40', '43', '45']} name='Volumen' click={handlerClickSelect} defaultValue={selectValue['Volumen'] ? selectValue['Volumen'] : 'Seleccionar'} uuid='8768798' label='Volumen'></SelectSimple>
                   <SelectSimple arr={['Contenedor estandar', 'Contenedor estandar', 'Contenedor estandar']} name='Equipo' click={handlerClickSelect} defaultValue={selectValue['Equipo'] ? selectValue['Equipo'] : 'Seleccionar'} uuid='8768798' label='Mercancia'></SelectSimple>
-                  {/* <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
+                  <InputFlotante type="number" id="floating_4" onChange={handlerOnChange} defaultValue={data['Peso (KG)']} required label={'Peso (KG)'} />
                   <InputFlotante type="number" id="floating_5" onChange={handlerOnChange} defaultValue={data['Volumen']} required label={'Volumen'} />
                   <InputFlotante type="number" id="floating_6" onChange={handlerOnChange} defaultValue={data['Equipo']} required label={'Equipo'} /> */}
 
@@ -559,12 +562,6 @@ export default function Home() {
           {/* <div className={`col-span-2   text-center  ${seeMore === 'MISION' ? 'h-auto' : 'h-0'} text-[14px]  overflow-hidden text-white`}>
 
       </div> */}
-
-
-
-
-
-
 
         </div>
 
